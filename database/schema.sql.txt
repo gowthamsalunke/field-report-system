@@ -1,0 +1,22 @@
+CREATE TABLE clients (
+  client_id SERIAL PRIMARY KEY,
+  client_name TEXT NOT NULL UNIQUE
+);
+
+CREATE TABLE project_managers (
+  manager_id SERIAL PRIMARY KEY,
+  client_id INT REFERENCES clients(client_id),
+  username TEXT NOT NULL UNIQUE,
+  password_hash TEXT NOT NULL
+);
+
+CREATE TABLE reports (
+  report_id BIGSERIAL PRIMARY KEY,
+  manager_id INT REFERENCES project_managers(manager_id),
+  client_id INT REFERENCES clients(client_id),
+  category TEXT NOT NULL,
+  report_date DATE NOT NULL,
+  submission_ts TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  payload_json JSONB NOT NULL,
+  UNIQUE(manager_id, report_date)
+);

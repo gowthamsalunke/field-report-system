@@ -1,0 +1,87 @@
+/* Center everything on the screen */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4a90e2, #50c9c3); /* nice gradient */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card styling */
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  width: 400px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Logo styling (Base64 image will be used in <img src="..."> in Layout.js) */
+.logo {
+  width: 90px;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Title and subtitle */
+.title {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.subtitle {
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 16px;
+}
+
+/* Input fields */
+.input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.input:focus, textarea:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 14px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.btn:hover {
+  background: #357ab8;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
